@@ -1,0 +1,20 @@
+<div [ngStyle]="{'background-image': 'url('+selectedImage+')'}" class="hero-image"></div>
+<div class="textoCambiado center">
+    <h2>{{myTitle}}</h2>
+    <p>{{myDescription}}</p>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <input class="inputCambio" type="text" [(ngModel)]="myTitle">
+            <input class="inputCambio" type="text" [(ngModel)]="myDescription">
+        </div>    
+    </div>
+    
+</div>
+<div class="row">
+    <div class="input-field col s12 m6 offset-m3">
+        <select [(ngModel)]="selectedImage" id="select-image">
+            <option value="" disabled selected>Choose Image</option>
+            <option *ngFor="let u of images" [ngValue]="u.imagelink">{{u.name}}</option>
+        </select>
+    </div>
+</div>
