@@ -1,0 +1,16 @@
+.brand-logo {
+  width: 30px;
+  position: relative;
+  margin-right: 10px;
+  height: 100%;
+}
+
+.brand-logo img {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+/*# sourceMappingURL=nav-bar.component.css.map */
