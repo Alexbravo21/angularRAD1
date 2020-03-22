@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QuotingComponent } from './components/quoting/quoting/quoting.component';
+import { QuotingComponent } from './components/quoting/quoting.component';
 import { BodyComponent } from './components/body/body.component';
 
 

@@ -1,0 +1,38 @@
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 class="section_title">Quote your favorite games</h1>
+        <h2 class="section_subtitle">Get special offers and stay inside your home</h2>
+    </div>
+</div>
+<div class="container quoting-body">
+    <div class="row">
+        <div class="col s12">
+            <p class="game-title">{{ getGame()["name"] }}</p>
+        </div>
+        <div class="row">
+            <div class="col s12 m6">
+                <img [src]="getGame()['img']" alt="" class="product-image">
+            </div>
+            <div class="col s12 m6">
+                <div class="price-cont col s12">
+                    <span class="game-price-discount">${{ getFinalPrice() }}</span>
+                    <span class="game-price">${{ getGame()["price"] }}</span>
+                </div>
+                <p class="game-desc"> {{ getGame()["description"] }}</p>
+                <div class="col s12">
+                    <div class="input-field row">
+                        <div class="col s2" style="padding-left: 0;">
+                            <label for="num_games">Quantity:</label>
+                        </div>
+                        <div class="col s2">
+                            <input type="number" name="num_games" id="num_games" min="1" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12" style="padding-left: 0;padding-right: 0;">
+                    <a class="waves-effect waves-light btn-large add-cart-button"><i class="material-icons right">add_shopping_cart</i>Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
