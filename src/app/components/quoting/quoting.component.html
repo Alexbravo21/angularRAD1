@@ -7,6 +7,10 @@
 <div class="container quoting-body">
     <div class="row">
         <div class="col s12">
+            <select [(ngModel)]="selectedGame" id="select-game" class="game-title" (change)="onGameChange()"> 
+                <option value="" disabled selected>Choose a game</option>
+                <option *ngFor="let u of games" [ngValue]="u">{{u.name}}</option>
+            </select>
             <p class="game-title">{{ getGame()["name"] }}</p>
         </div>
         <div class="row">
@@ -15,8 +19,8 @@
             </div>
             <div class="col s12 m6">
                 <div class="price-cont col s12">
-                    <span class="game-price-discount">${{ getFinalPrice() }}</span>
-                    <span class="game-price">${{ getGame()["price"] }}</span>
+                    <span class="game-price-discount">${{ finalPrice }}</span>
+                    <span class="game-price">${{ finalRealPrice }}</span>
                 </div>
                 <p class="game-desc"> {{ getGame()["description"] }}</p>
                 <div class="col s12">
@@ -25,7 +29,7 @@
                             <label for="num_games">Quantity:</label>
                         </div>
                         <div class="col s2">
-                            <input type="number" name="num_games" id="num_games" min="1" value="1">
+                            <input type="number" [(ngModel)]="num_games" name="num_games" id="num_games" min="1" value="1" (input)="onSearchChange($event.target.value)">
                         </div>
                     </div>
                 </div>

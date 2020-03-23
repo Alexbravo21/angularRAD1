@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as M from 'materialize-css/dist/js/materialize';
 
 @Component({
   selector: 'app-quoting',
@@ -66,17 +67,35 @@ export class QuotingComponent implements OnInit {
         }
     ]
     selectedGame = this.games[0];
+    quantity = 1;
+    finalPrice = (this.selectedGame["price"] - (this.selectedGame["price"] * (this.selectedGame["discount"] / 100))) * this.quantity;
+    finalRealPrice = this.selectedGame["price"] * this.quantity;
+    num_games: number = 1;
 
     constructor() { }
 
+    ngAfterViewInit(){
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    }
     ngOnInit(): void  {
     }
 
     getGame = () => {
         return this.selectedGame;
     }
-    getFinalPrice(){
-        return this.selectedGame["price"] - (this.selectedGame["price"] * (this.selectedGame["discount"] / 100)) ;
+
+    onSearchChange(searchValue): void {  
+        this.quantity = searchValue;
+        this.finalPrice = (this.selectedGame["price"] - (this.selectedGame["price"] * (this.selectedGame["discount"] / 100))) * this.quantity;
+        this.finalRealPrice = this.selectedGame["price"] * this.quantity;
+    }
+
+    onGameChange() {
+        this.quantity = 1;
+        this.num_games = 1;
+        this.finalPrice = (this.selectedGame["price"] - (this.selectedGame["price"] * (this.selectedGame["discount"] / 100))) * this.quantity;
+        this.finalRealPrice = this.selectedGame["price"] * this.quantity;
     }
 
 }
