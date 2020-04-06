@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/dist/ejericio-A06032020'));
 
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/*', function(req,res) {
+app.get('/', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
 });
 
