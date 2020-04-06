@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BodyComponent } from './components/body/body.component';
 import { QuotingComponent } from './components/quoting/quoting.component';
+import { ArmoryComponent } from './components/armory/armory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     BodyComponent,
-    QuotingComponent
+    QuotingComponent,
+    ArmoryComponent
   ],
   imports: [
     BrowserModule,
