@@ -28,6 +28,7 @@
     "@angular/router": "~9.0.3",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
+    "passport": "^0.4.1",
     "passport-bnet": "^2.0.0",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
