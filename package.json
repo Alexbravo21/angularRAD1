@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "node server/server.js",
     "dev": "npm run heroku-postbuild & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
     "build": "ng build",
     "serve": "ng serve --proxy-config proxy.conf.json",
