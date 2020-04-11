@@ -34,15 +34,15 @@ app.get('/armory/characters', function(req, res){
 app.use(express.static(__dirname + '/dist/ejericio-A06032020'));
 
 //Routes for current sections
-app.get('/', function(req,res) {
+app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
 });
-app.get('/quoting', function(req,res) {
-    res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
-});
-app.get('/armory', function(req,res) {
-    res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
-});
+// app.get('/quoting', function(req,res) {
+//     res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
+// });
+// app.get('/armory', function(req,res) {
+//     res.sendFile(path.join(__dirname+'/dist/ejericio-A06032020/index.html'));
+// });
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 3000);
