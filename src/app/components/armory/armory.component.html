@@ -1,5 +1,14 @@
-<div class="container">
-    <div class="row">
-        <a href="/auth/bnet" class="waves-effect waves-light btn-large bnet-login-button">Login with Battle.net</a>
+<div class="armory_cont" [ngStyle]="{'background-image': 'url('+armory_background+')'}">
+    <img [src]="armory_logo" alt="" class="armory_logo" (click)="getFirstChar()" [ngClass]="{'fade-out': logoFade}">
+    <div class="armory_char" [ngClass]="{'fade-in': armoryFade}">
+        <div class="charname_cont">
+            <p class="char_name" [ngStyle]="{'color': classColor[classAlias]}">{{ character['name'] }}</p>
+            <p class="char_lvl">{{ character['playable_race'] }} {{ character['level'] }} {{ character['playable_class'] }}</p>
+        </div>
+        <div class="faction_cont">
+            <img [src]="faction_logo" alt="" class="faction_logo">
+            <p class="realm">{{ character['realm'] }}</p>
+        </div>
     </div>
 </div>
+

@@ -1,9 +1,92 @@
-.bnet-login-button{
-    display: block;
-    margin: 20px auto;
-    background-color: #00aeff;
-    color: #022753;
-    font-weight: bold;
-    width: 350px;
-    max-width: 100%;
+$nav-height: 64px;
+
+
+.armory_cont{
+    background-image: url(../../../assets/img/armory/background_3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 15px;
+    width: 100vw;
+    height: calc(100vh - #{$nav-height});
+    @media (min-width: 768px) {
+        background-position: center center;
+    }
+    .armory_logo{
+        position: fixed;
+        top: calc(50% + #{$nav-height});
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        animation: 1.8s infinite beating;
+    }
+    .armory_char{
+        display: none;
+        opacity: 0;
+        .charname_cont{
+            width: 300px;
+            max-width: 30%;
+            font-size: 2rem;
+            color: white;
+            font-size: 1.5rem;
+            @media (min-width: 768px) {
+                position: absolute;
+                top: calc(10% + #{$nav-height});
+                left: 5%;
+            }
+            .char_name{
+                font-size: 3rem;
+                margin-bottom: 3px;
+            }
+            .char_lvl{
+                margin: 0 auto 10px;
+            }
+        }
+        .faction_cont{
+            width: 300px;
+            max-width: 30%;
+            text-align: center;
+            @media (min-width: 768px) {
+                position: absolute;
+                top: calc(10% + #{$nav-height});
+                right: 0;
+            }
+            .realm{
+                color: white;
+                font-size: 2rem;
+                margin: 5px auto;
+            }
+            .faction_logo{
+                width: 150px;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.fade-out{
+    transition: all 300ms ease-in-out;
+    opacity: 0 !important;
+    display: none !important;
+}
+.fade-in{
+    transition: all 300ms ease-in-out;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+
+//animations
+
+@keyframes beating{
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
 }

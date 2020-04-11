@@ -8,7 +8,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BodyComponent } from './components/body/body.component';
 import { QuotingComponent } from './components/quoting/quoting.component';
 import { ArmoryComponent } from './components/armory/armory.component';
-import { CharacterComponent } from './components/character/character.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import { CharacterComponent } from './components/character/character.component';
     NavBarComponent,
     BodyComponent,
     QuotingComponent,
-    ArmoryComponent,
-    CharacterComponent
+    ArmoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

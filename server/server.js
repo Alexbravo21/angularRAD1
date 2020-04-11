@@ -5,13 +5,14 @@ const path = require('path');
 const app = express();
 const MONGOU = process.env.MONGOU;
 const MONGOP = process.env.MONGOP;
-var passport = require('passport');
-var passportSetup = require('./config')
 
 var mongoose = require('mongoose');
+const cors = require('cors');
+
+app.use(cors());
 
 //Conect to DB
-mongoose.connect("mongodb+srv://"+MONGOU+":"+MONGOP+"@cluster0-rntsh.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }, (err) => {
+mongoose.connect("mongodb+srv://"+MONGOU+":"+MONGOP+"@cluster0-rntsh.mongodb.net/gam?retryWrites=true&w=majority", { useNewUrlParser: true }, (err) => {
     if(err){
         console.log(err);
     }else{
@@ -19,20 +20,15 @@ mongoose.connect("mongodb+srv://"+MONGOU+":"+MONGOP+"@cluster0-rntsh.mongodb.net
     }
 });
 
-const Characters = require('./server/charachter');
+const Characters = require('./charachter');
 
 app.get('/armory/characters', function(req, res){
     Characters.find({} ,function(err, wowchars){
         if(err) return res.status(500).json(err);
-        var charMap = {};
-        wowchars.forEach(function (char) {
-            charMap[char._id] = char
-        });
-        console.log('Found Characters: ', charMap);
-        res.status(200).json(charMap);
+        console.log('Found Characters: ', wowchars);
+        res.status(200).json(wowchars);
     })
 })
-
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/ejericio-A06032020'));
